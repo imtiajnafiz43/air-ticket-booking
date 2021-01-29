@@ -100,6 +100,8 @@ nav ul li a:hover, a.active{
 .booking-content{
     color: #fff;
     width: 80%;
+    position: relative;
+    right: -300px;
 }
 .booking-content h1{
     font-size: 70px;
@@ -128,6 +130,8 @@ a{
     color: white;
 }
 #thanksgiving{
+    position: relative;
+    right: -300px;
     display: none;
     color: white;
     width: 80%;
