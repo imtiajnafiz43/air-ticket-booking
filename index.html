@@ -33,20 +33,20 @@
             <h3>Booking Flights</h3>
             <div class="input-group">
                 <label for="">Flying From</label>
-                <input class="inp-style" type="text" name="" placeholder="Dhake, Bangladesh">
+                <input id="flying-from" class="inp-style" type="text" name="" placeholder="Dhaka, Bangladesh">
             </div>
             <div class="input-group">
                 <label for="">Flying To</label>
-                <input class="inp-style" type="text" name="" placeholder="New York, United States">
+                <input id="flying-to" class="inp-style" type="text" name="" placeholder="New York, United States">
             </div>
             <div class="inputs">
                 <div class="input-group">
                     <label" for="">Departure</label>
-                        <input class="inp-style" type="date" name="">
+                        <input id="departure-date" class="inp-style" type="date" name="">
                 </div>
                 <div class="input-group">
                     <label for="">Return</label>
-                    <input class="inp-style" type="date" name="">
+                    <input id="return" class="inp-style" type="date" name="">
                 </div>
             </div>
             <div class="input-group f-class">
@@ -98,7 +98,7 @@
                         <h4>Total</h4>
                     </div>
                     <div class="right">
-                        <p id="totalPriceToPay">$00</p>
+                        <p id="totalPriceToPay"></p>
                     </div>
                 </div>
             </div>
@@ -106,10 +106,16 @@
         </div>
         <div id="thanksgiving">
             <h1>CONGRATULATION!!</h1>
-
-            <h3> Your Ticket Have Been Booked.</h3>
-            <p>You will find your ticket at <a href="">flyabove@gmail.com</a></p>
-            <p>Have a safe journey.THANK YOU.</p>
+            <div class="thanksgiving-content">
+                <h3> Your Ticket Have Been Booked.</h3>
+                <h3 id="flyingFromShow">Flying From: </h3>
+                <h3 id="flyingToShow">Fying To:</h3>
+                <h3 id="departure">Departure Date:</h3>
+                <h3 id="return-date"></h3>
+                <h3 id="ticket-price">Ticket Price</h3>
+                <h3>You will find your ticket at <a href="">flyabove@gmail.com</a></h3>
+                <h3>Have a safe journey.THANK YOU.</h3>
+            </div>
 
         </div>
 
@@ -120,6 +126,9 @@
                 voluptatibus quam</p>
         </div>
         </section>
+        <footer>
+            <s>&copy at Nafiz Imtiaj || All rights reserved, 2021</s>
+        </footer>
 
         <script>
             // plus/minus button functioning
@@ -154,13 +163,25 @@
                 return productCount;
             }
             function handleBooking() {
-                document.getElementById('bookingContent').style.display = 'none';
-                document.getElementById('thanksgiving').style.display = 'block';
+                if (document.getElementById('totalPriceToPay').innerText == "" || document.getElementById('flying-from').value == "" || document.getElementById('flying-to').value == "") {
+                    alert('Please complete the Booking form')
+                }
+                else {
+                    document.getElementById('bookingContent').style.display = 'none';
+                    document.getElementById('thanksgiving').style.display = 'block';
+                    const flyingFrom = document.getElementById('flying-from').value;
+                    document.getElementById('flyingFromShow').innerText = 'Flying From: ' + flyingFrom;
+                    const flyingTo = document.getElementById('flying-to').value;
+                    document.getElementById('flyingToShow').innerText = 'Flying To: ' + flyingTo;
+                    const departureDate = document.getElementById('departure-date').valueAsDate;
+                    document.getElementById('departure').innerText = 'Departure Date: ' + departureDate;
+                    const returnDate = document.getElementById('return').valueAsDate;
+                    document.getElementById('return-date').innerText = 'Return Date: ' + returnDate;
+                    const ticketPriceToShow = document.getElementById('totalPriceToPay').innerText;
+                    document.getElementById('ticket-price').innerText = 'Ticket Price: ' + ticketPriceToShow;
+                }
             }
         </script>
-        <footer>
-            <s>&copy at Nafiz Imtiaj || All rights reserved, 2021</s>
-        </footer>
         <!--Thank You-->
 </body>
 

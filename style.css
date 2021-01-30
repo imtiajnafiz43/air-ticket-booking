@@ -127,19 +127,30 @@ nav ul li a:hover, a.active{
 }
 a{
     text-decoration: none;
-    color: white;
+    color: rgb(0, 0, 0);
 }
 #thanksgiving{
+    background-color: rgba(15, 15, 15, 0.558) ;
     position: relative;
+    padding-right:25px;
     right: -300px;
     display: none;
-    color: white;
+    border: 1px solid #ddd;
+    color: rgb(249, 249, 250);
     width: 80%;
+    border-radius: 5px;
 }
 #thanksgiving h1{
     font-family: 'Bebas Neue', cursive;
     font-weight: 400;
     font-size: 70px;
+    margin: 20px;
+}
+.thanksgiving-content{
+    margin: 20px;
+    font-size: 15px;
+    font-weight: 500;
+
 }
 .btn{
     padding: 10px;
@@ -152,4 +163,6 @@ a{
 }
 footer{
     text-align: center;
+    color:rgb(1, 1, 41);
 }
+
